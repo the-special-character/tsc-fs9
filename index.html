@@ -136,8 +136,6 @@
 
     <!-- Google Analytics -->
 
-
-
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -154,117 +152,160 @@
     <!-- End Google Tag Manager -->
   </head>
   <body>
-    <div>
-      <h1>Hello</h1>
-      <img
-        src="https://ik.imagekit.io/mdzi40eohii/LOGO_JPG_LPpqlWGhQ.jpg"
-        alt="image"
-        height="300"
-        width="300"
-      />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sapiente
-        voluptas, pariatur id laborum officia eum asperiores dolorem
-        necessitatibus perspiciatis non. Nihil veritatis quisquam necessitatibus
-        nemo, distinctio suscipit placeat facilis!
-      </p>
-    </div>
+    <!-- First Name * -->
 
-    <!-- UI -->
-    <!-- Accesibility -->
-    <!-- SEO -->
+    <!-- Last Name * -->
 
-    <!-- Content Delivery Network -->
+    <!-- mobile Number * -->
 
-    <!-- <h1 style="font-family: 'Roboto', sans-serif;">hello world</h1>
+    <!-- email address * -->
 
-    <h3>Lorem ipsum dolor sit amet.</h3>     -->
+    <!-- message -->
 
-    <ul>
-      <li>
-        <a href="#banner" target="_blank">Banner</a>
-      </li>
-      <li>
-        <a href="#about" target="_parent">About</a>
-      </li>
-      <li>
-        <a href="#projects" target="_self">Projects</a>
-      </li>
-      <li>
-        <a href="#blogs" target="_top">Blogs</a>
-      </li>
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-    </ul>
+    <!-- validation -->
+    <!--  -->
 
-    <!-- HTML5  -->
+    <form oninput="result.value = age.value">
+      <div>
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          placeholder="Please enter First Name"
+          autocapitalize="off"
+          autocomplete="given-name"
+          required
+        />
+      </div>
 
-    <!-- Semantic Elements -->
+      <div>
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          placeholder="please enter Lirst Name"
+          autocomplete="family-name"
+          required
+        />
+      </div>
 
-    <header>
-      <a href=""></a>
-      <nav>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </nav>
+      <div>
+        <label for="emailAddress">Email Address</label>
+        <input
+          type="email"
+          id="emailAddress"
+          placeholder="please enter Email Address"
+          autocomplete="email"
+          required
+          multiple
+        />
+      </div>
 
-      <button></button>
-    </header>
-    <aside></aside>
-    <aside></aside>
-    <main>
-      <section>
-        <article></article>
-      </section>
+      <div>
+        <label for="mobileNumber">Mobile Number</label>
+        <input
+          type="tel"
+          id="mobileNumber"
+          placeholder="please enter Mobile Number"
+          autocomplete="tel"
+          required
+        />
+      </div>
 
-      <section></section>
+      <fieldset>
+        <legend>Gender</legend>
+        <div>
+          <input type="radio" name="gender" id="male" />
+          <label for="male">Male</label>
+        </div>
 
-      <section></section>
+        <div>
+          <input type="radio" name="gender" id="female" />
+          <label for="female">Female</label>
+        </div>
+      </fieldset>
 
-      <address>
-        <p></p>
-      </address>
+      <select>
+        <option value="">Please select gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
 
-      <details open="true">
-        <summary>About this item</summary>
-        <ul>
-          <li>hello product</li>
-        </ul>
-      </details>
-    </main>
+      <fieldset>
+        <legend>Hobbies</legend>
+        <div>
+          <input type="checkbox" name="hobbies" id="cricket" />
+          <label for="cricket">Cricket</label>
+        </div>
+        <div>
+          <input type="checkbox" name="hobbies" id="football" />
+          <label for="football">Football</label>
+        </div>
+        <div>
+          <input type="checkbox" name="hobbies" id="coding" />
+          <label for="coding">Coding</label>
+        </div>
+        <div>
+          <input type="checkbox" name="hobbies" id="dance" />
+          <label for="dance">Dance</label>
+        </div>
+        <div>
+          <input type="checkbox" name="hobbies" id="drawing" />
+          <label for="drawing">Drawing</label>
+        </div>
+      </fieldset>
 
-    <!-- SEO -->
-    <!-- <a href="#banner" target="_blank">Banner</a>
-    <a href="#about" target="_parent">About</a>
-    <a href="#projects" target="_self">Projects</a>
-    <a href="#blogs" target="_top">Blogs</a>
-    <a href="#contact">Contact</a> -->
+      <select multiple>
+        <option value="">Please select Hobbies</option>
+        <optgroup label="Sports">
+          <option value="cricket">Cricket</option>
+          <option value="football">Football</option>
+        </optgroup>
+        <optgroup label="Activity">
+          <option value="coding">Coding</option>
+          <option value="dance">Dance</option>
+          <option value="drawing">Drawing</option>
+        </optgroup>
+      </select>
 
-    <!-- <a href="https://www.google.com" target="_blank">Google</a>
+      <div>
+        <label for="collegeName">College Name</label>
+        <input type="text" id="collegeName" list="collegeList" />
 
-    <div style="height: 100vh; background-color: dodgerblue" id="banner">
-      <h1>Banner</h1>
-    </div>
-    <div style="height: 100vh; background-color: coral" id="about">
-      <h1>About</h1>
-    </div>
-    <div style="height: 100vh; background-color: blueviolet" id="projects">
-      <h1>Projects</h1>
-    </div>
-    <div style="height: 100vh; background-color: gold" id="blogs">
-      <h1>Blogs</h1>
-    </div>
-    <div style="height: 100vh; background-color: yellow" id="contact">
-      <h1>contact</h1>
-    </div> -->
+        <datalist id="collegeList">
+          <option>LDRP</option>
+          <option>Sivler Oack</option>
+          <option>Nirma</option>
+          <option>SAL</option>
+          <option>Indus</option>
+        </datalist>
+      </div>
 
-    <!-- Google Tag Manager (noscript) -->
+      <div>
+        <label for="avatar">Avatar</label>
+        <input type="file" accept="image/*" id="avatar" multiple />
+      </div>
+
+      <meter min="200" max="500" value="350"></meter>
+
+      <meter low="69" high="80" max="100" value="70">B</meter>
+
+      <progress value="30" max="100"></progress>
+
+      <div>
+        <input type="range" min="0" max="100" value="60" id="age" />
+        <output name="result" for="age">60</output>
+      </div>
+
+      <div>
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-MMHFNWQC"
@@ -275,6 +316,22 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "siqe00880f7ec4146c0696bfd7a535c72a5e8795cf6418a96a78d35ca84c002ec02", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
+    <script type="text/javascript" id="zsiqchat">
+      var $zoho = $zoho || {};
+      $zoho.salesiq = $zoho.salesiq || {
+        widgetcode:
+          "siqe00880f7ec4146c0696bfd7a535c72a5e8795cf6418a96a78d35ca84c002ec02",
+        values: {},
+        ready: function () {},
+      };
+      var d = document;
+      s = d.createElement("script");
+      s.type = "text/javascript";
+      s.id = "zsiqscript";
+      s.defer = true;
+      s.src = "https://salesiq.zoho.in/widget";
+      t = d.getElementsByTagName("script")[0];
+      t.parentNode.insertBefore(s, t);
+    </script>
   </body>
 </html>
