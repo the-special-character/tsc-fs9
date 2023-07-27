@@ -150,8 +150,38 @@
       })(window, document, "script", "dataLayer", "GTM-MMHFNWQC");
     </script>
     <!-- End Google Tag Manager -->
+
+    <style>
+      #banner {
+        height: 300vh;
+        background-color: yellow;
+      }
+
+      @media screen and (max-width: 1280px) {
+        #banner {
+          background-color: dodgerblue;
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+        #banner {
+          background-color: gold;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        #banner {
+          background-color: coral;
+        }
+      }
+
+      
+
+      
+    </style>
   </head>
   <body>
+    <div id="banner"></div>
     <!-- First Name * -->
 
     <!-- Last Name * -->
@@ -280,6 +310,66 @@
           <option>Indus</option>
         </datalist>
       </div>
+
+      <picture>
+        <source srcset="./assets/banner@3x.jpg" media="(min-width:1024px)" />
+        <source srcset="./assets/banner@2x.jpg" media="(min-width:640px)" />
+        <img src="./assets/banner@1x.jpg" alt="banner" height="200px" width="300px">
+      </picture>
+
+      <!-- <picture>
+        <source
+          srcset="
+            ./assets/banner@1x.jpg,
+            ./assets/banner@2x.jpg 2x,
+            ./assets/banner@3x.jpg 3x
+          "
+        />
+
+        <img
+          src="./assets/banner@1x.jpg"
+          alt="logo"
+          height="200px"
+          width="300px"
+        />
+      </picture>
+
+      <picture>
+        <source srcset="./assets/banner.avif" type="image/avif" />
+        <source srcset="./assets/banner.webp" type="image/webp" />
+        <img
+          src="./assets/banner@1x.jpg"
+          alt="banner"
+          height="200px"
+          width="300px"
+        />
+      </picture> -->
+
+      <!-- <img src="./assets/banner@1x.jpg" alt="banner" height="200px" width="300px">
+      <img src="./assets/banner.webp" alt="banner" height="200px" width="300px">
+      <img src="./assets/banner.avif" alt="banner" height="200px" width="300px"> -->
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        viewBox="0 -960 960 960"
+        width="48"
+      >
+        <style>
+          path {
+            fill: green;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            path {
+              fill: #fff;
+            }
+          }
+        </style>
+        <path
+          d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"
+        />
+      </svg>
 
       <div>
         <label for="avatar">Avatar</label>
