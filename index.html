@@ -152,265 +152,37 @@
     <!-- End Google Tag Manager -->
 
     <style>
-      #banner {
-        height: 300vh;
-        background-color: yellow;
+      div {
+        height: 300px;
+        width: 300px;
+        background-color: green;
       }
 
-      @media screen and (max-width: 1280px) {
-        #banner {
-          background-color: dodgerblue;
-        }
+      @font-face {
+        font-family: 'abcd';
+        src: url('./assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
+              url('./assets/fonts/roboto-regular-webfont.woff') format('woff');
       }
 
-      @media screen and (max-width: 1024px) {
-        #banner {
-          background-color: gold;
-        }
+      @font-face {
+        font-family: 'abcd_bold';
+        src: url('./assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
+              url('./assets/fonts/roboto-bold-webfont.woff') format('woff');
       }
 
-      @media screen and (max-width: 640px) {
-        #banner {
-          background-color: coral;
-        }
+      h1 {
+        font-family: 'abcd';
       }
 
-      
-
-      
     </style>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
   </head>
   <body>
-    <div id="banner"></div>
-    <!-- First Name * -->
+    <h1>Hello World</h1>
 
-    <!-- Last Name * -->
+    <div></div>
 
-    <!-- mobile Number * -->
-
-    <!-- email address * -->
-
-    <!-- message -->
-
-    <!-- validation -->
-    <!--  -->
-
-    <form oninput="result.value = age.value">
-      <div>
-        <label for="firstName">First Name</label>
-        <input
-          type="text"
-          id="firstName"
-          placeholder="Please enter First Name"
-          autocapitalize="off"
-          autocomplete="given-name"
-          required
-        />
-      </div>
-
-      <div>
-        <label for="lastName">Last Name</label>
-        <input
-          type="text"
-          id="lastName"
-          placeholder="please enter Lirst Name"
-          autocomplete="family-name"
-          required
-        />
-      </div>
-
-      <div>
-        <label for="emailAddress">Email Address</label>
-        <input
-          type="email"
-          id="emailAddress"
-          placeholder="please enter Email Address"
-          autocomplete="email"
-          required
-          multiple
-        />
-      </div>
-
-      <div>
-        <label for="mobileNumber">Mobile Number</label>
-        <input
-          type="tel"
-          id="mobileNumber"
-          placeholder="please enter Mobile Number"
-          autocomplete="tel"
-          required
-        />
-      </div>
-
-      <div>
-      <video controls controlslist="nofullscreen" width="250" poster="./assets/banner@3x.jpg">
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
-    
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-    
-        Download the
-        <a href="/media/cc0-videos/flower.webm">WEBM</a>
-        or
-        <a href="/media/cc0-videos/flower.mp4">MP4</a>
-        video.
-    </video>
-
-    <audio></audio>
-  </div>
-
-      <fieldset>
-        <legend>Gender</legend>
-        <div>
-          <input type="radio" name="gender" id="male" />
-          <label for="male">Male</label>
-        </div>
-
-        <div>
-          <input type="radio" name="gender" id="female" />
-          <label for="female">Female</label>
-        </div>
-      </fieldset>
-
-      <select>
-        <option value="">Please select gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
-
-      <fieldset>
-        <legend>Hobbies</legend>
-        <div>
-          <input type="checkbox" name="hobbies" id="cricket" />
-          <label for="cricket">Cricket</label>
-        </div>
-        <div>
-          <input type="checkbox" name="hobbies" id="football" />
-          <label for="football">Football</label>
-        </div>
-        <div>
-          <input type="checkbox" name="hobbies" id="coding" />
-          <label for="coding">Coding</label>
-        </div>
-        <div>
-          <input type="checkbox" name="hobbies" id="dance" />
-          <label for="dance">Dance</label>
-        </div>
-        <div>
-          <input type="checkbox" name="hobbies" id="drawing" />
-          <label for="drawing">Drawing</label>
-        </div>
-      </fieldset>
-
-      <select multiple>
-        <option value="">Please select Hobbies</option>
-        <optgroup label="Sports">
-          <option value="cricket">Cricket</option>
-          <option value="football">Football</option>
-        </optgroup>
-        <optgroup label="Activity">
-          <option value="coding">Coding</option>
-          <option value="dance">Dance</option>
-          <option value="drawing">Drawing</option>
-        </optgroup>
-      </select>
-
-      <div>
-        <label for="collegeName">College Name</label>
-        <input type="text" id="collegeName" list="collegeList" />
-
-        <datalist id="collegeList">
-          <option>LDRP</option>
-          <option>Sivler Oack</option>
-          <option>Nirma</option>
-          <option>SAL</option>
-          <option>Indus</option>
-        </datalist>
-      </div>
-
-      <picture>
-        <source srcset="./assets/banner@3x.jpg" media="(min-width:1024px)" />
-        <source srcset="./assets/banner@2x.jpg" media="(min-width:640px)" />
-        <img src="./assets/banner@1x.jpg" alt="banner" height="200px" width="300px">
-      </picture>
-
-      <!-- <picture>
-        <source
-          srcset="
-            ./assets/banner@1x.jpg,
-            ./assets/banner@2x.jpg 2x,
-            ./assets/banner@3x.jpg 3x
-          "
-        />
-
-        <img
-          src="./assets/banner@1x.jpg"
-          alt="logo"
-          height="200px"
-          width="300px"
-        />
-      </picture>
-
-      <picture>
-        <source srcset="./assets/banner.avif" type="image/avif" />
-        <source srcset="./assets/banner.webp" type="image/webp" />
-        <img
-          src="./assets/banner@1x.jpg"
-          alt="banner"
-          height="200px"
-          width="300px"
-        />
-      </picture> -->
-
-      <!-- <img src="./assets/banner@1x.jpg" alt="banner" height="200px" width="300px">
-      <img src="./assets/banner.webp" alt="banner" height="200px" width="300px">
-      <img src="./assets/banner.avif" alt="banner" height="200px" width="300px"> -->
-
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="48"
-        viewBox="0 -960 960 960"
-        width="48"
-      >
-        <style>
-          path {
-            fill: green;
-          }
-
-          @media (prefers-color-scheme: dark) {
-            path {
-              fill: #fff;
-            }
-          }
-        </style>
-        <path
-          d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"
-        />
-      </svg>
-
-      <div>
-        <label for="avatar">Avatar</label>
-        <input type="file" accept="image/*" id="avatar" multiple />
-      </div>
-
-      <meter min="200" max="500" value="350"></meter>
-
-      <meter low="69" high="80" max="100" value="70">B</meter>
-
-      <progress value="30" max="100"></progress>
-
-      <div>
-        <input type="range" min="0" max="100" value="60" id="age" />
-        <output name="result" for="age">60</output>
-      </div>
-
-      <div>
-        <label for="message">Message</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
-      </div>
-
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
-    </form>
+    <div></div>
 
     <noscript
       ><iframe
