@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke
+}
+.Back{
+    background-color: rgb(18, 18, 18);
+    background-size: contain;
+    background-position: center;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.name{
+    color: green;
+    font-size: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.chovatiya{
+    color: white;
+}
+.nav ul li{
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px  25px;
+}
+.nav ul li h{
+    color: white;
+    text-underline-offset: underline;
+}
+.about img{
+    height: auto;
+    width: 100px;
+}

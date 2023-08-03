@@ -1,0 +1,84 @@
+#price {
+    color: rgb(0, 118, 0);
+  }
+  #B1 {
+    background-color: rgb(255, 216, 20);
+    color: black;
+    border: none;
+    border-radius: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #B1:hover {
+    background-color: rgb(197, 168, 22);
+    padding-left: 25px;
+    padding-right: 25px;
+    transition: background-color 0.2s, padding-left 0.5s, padding-right 0.5s;
+  }
+  #B1:active {
+    opacity: 0.6;
+  }
+  #B2 {
+    background-color: rgb(255, 164, 28);
+    color: black;
+    border: none;
+    border-radius: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  #B2:hover{
+    opacity: 0.7;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: opacity 0.4s, Padding 0.7s;
+  }
+  #Uber {
+    background-color: black;
+    color: white;
+    border: none;
+    font-weight: bold;
+    height: 30px;
+    width: 120px;
+  }
+  #Uber:hover {
+    opacity: 0.8;
+  }
+  #Bootstrap {
+    background-color: blueviolet;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    height: 30px;
+    width: 110px;
+    padding: center;
+  }
+  #Bootstrap:hover {
+    background-color: rgb(81, 24, 134);
+    transition: 0.2s;
+  }
+  #Head{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  #Online{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: 0px;
+    text-align: center;
+  }
+  #Under:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
