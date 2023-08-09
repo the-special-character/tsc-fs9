@@ -151,40 +151,153 @@
     </script>
     <!-- End Google Tag Manager -->
 
+    <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
+
     <style>
-      div {
-        height: 300px;
-        width: 300px;
-        background-color: green;
+      @font-face {
+        font-family: "abcd";
+        src: url("./assets/fonts/roboto-regular-webfont.woff2") format("woff2"),
+          url("./assets/fonts/roboto-regular-webfont.woff") format("woff");
       }
 
       @font-face {
-        font-family: 'abcd';
-        src: url('./assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
-              url('./assets/fonts/roboto-regular-webfont.woff') format('woff');
+        font-family: "abcd_bold";
+        src: url("./assets/fonts/roboto-bold-webfont.woff2") format("woff2"),
+          url("./assets/fonts/roboto-bold-webfont.woff") format("woff");
       }
 
-      @font-face {
-        font-family: 'abcd_bold';
-        src: url('./assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
-              url('./assets/fonts/roboto-bold-webfont.woff') format('woff');
+      
+
+      /* .wrapper {
+        height: 100vh;
+        width: 100vw;
+        background-color: yellow;
+        position: relative;
+        
       }
 
-      h1 {
-        font-family: 'abcd';
+      .box {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        position: absolute;
       }
 
+      .box:nth-child(2) {
+        top: 50px;
+        left: 50px;
+        background-color: aqua;
+      }
+
+      .box:nth-child(3) {
+        top: 100px;
+        left: 100px;
+        background-color: gold;
+      } */
+
+   
+
+      /* header {
+        height: 64px;
+        background-color: red;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+      }
+
+      section {
+        height: 100vh;
+      }
+
+      section:nth-child(1) {
+        background-color: coral;
+      }
+      section:nth-child(2) {
+        background-color: gold;
+      }
+      section:nth-child(3) {
+        background-color: aquamarine;
+      } */
+
+      .wrapper {
+        background-color: yellow;
+        display: flex;
+        gap: 10px;
+      }
+
+      .wrapper > div {
+        flex: 1;
+        background-color: coral;
+      }
+
+      .wrapper > div:first-child > .box {
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+
+      .box {
+        height: 500px;
+        width: 80%;
+        background-color: gold;
+      }
+
+      .wrapper > div:nth-child(2) > .box:nth-child(1) {
+        background-color: chocolate;
+      }
+
+      .wrapper > div:nth-child(2) > .box:nth-child(2) {
+        background-color: violet;
+      }
+
+      .wrapper > div:nth-child(2) > .box:nth-child(1) {
+        background-color: blue;
+      }
+
+     
     </style>
-    <!-- <link rel="stylesheet" href="./style.css" /> -->
   </head>
   <body>
-    <h1>Hello World</h1>
 
-    <h2>&#8377 5000</h2>
+    <fieldset>
+      <legend>Gender</legend>
+    </fieldset>
 
-    <div></div>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
 
-    <div></div>
+    <!-- <div class="wrapper">
+      <div>
+        <div class="box"></div>
+      </div>
+      <div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div> -->
+
+    <!-- <header>
+
+    </header>
+    <main>
+      <section></section>
+      <section></section>
+      <section></section>
+    </main> -->
+
+    <!-- <div class="wrapper">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div> -->
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maxime dolorum, ex cum nulla quaerat quidem? Nulla exercitationem, corporis consectetur non iure nesciunt nostrum, at ad corrupti porro distinctio quo.</p> -->
+
+    <!-- <div class="wrapper"> -->
+    <!-- <div class="box"> -->
+    <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, repellat?</p> -->
+    <!-- </div> -->
+    <!-- </div> -->
 
     <noscript
       ><iframe
