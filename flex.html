@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+
+    <style>
+      .wrapper {
+        height: 100vh;
+        display: flex;
+        gap: 10px;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .box {
+        flex: 1;
+        background-color: red;
+        border-radius: 50px;
+      }
+
+      .box:nth-child(1) {
+        background-color: yellow;
+      }
+
+      .box:nth-child(2) {
+        background-color: coral;
+      }
+
+      @media screen and (max-width: 640px) {
+        .wrapper {
+            flex-direction: column;
+            
+        }
+
+        .box:nth-child(2) {
+          order: -1;
+        }
+
+        .box:nth-child(1) {
+          flex: 5;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

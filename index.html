@@ -220,7 +220,7 @@
         background-color: aquamarine;
       } */
 
-      .wrapper {
+      /* .wrapper {
         background-color: yellow;
         display: flex;
         gap: 10px;
@@ -253,18 +253,89 @@
 
       .wrapper > div:nth-child(2) > .box:nth-child(1) {
         background-color: blue;
+      } */
+
+      body {
+        margin: 0;
+        padding: 0;
       }
+
+      .wrapper {
+        /* display: flex;
+        flex-direction: row; */
+        /* flex-wrap: wrap; */
+        /* gap: 20px; */
+        /* x axis for row */
+        /* y axis for row */
+        /* justify-content: space-evenly; */
+        /* y axis for row */
+        /* x axis for row */
+        /* align-items: stretch; */
+
+        /* works when flex-wrap is wrap */
+        /* align-content: space-evenly;
+        background-color: yellow;
+        height: 100vh; */
+      }
+
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        /* gap: 10px; */
+        height: 100vh;
+        align-content: flex-start;
+        /* align-items: center; */
+        margin: 10px;
+        /* background-color: antiquewhite; */
+      }
+
+      .box {  
+        height: 300px;
+        flex-basis: 300px;
+        flex-shrink: 0;
+      }
+
+      .box:nth-child(2) {
+        flex-grow: 3;
+        background-color: red;
+        
+      }
+
+      .box:nth-child(1) {
+        flex-grow: 1;
+        background-color: lime;
+      }
+/* 
+      .box:first-child {
+        margin-left: 0;
+      } */
+
+      /* .box:last-child {
+        margin-right: 0;
+      } */
 
      
     </style>
   </head>
   <body>
 
-    <fieldset>
+    <div class="wrapper">
+      <div class="box">Item 1</div>
+      <div class="box">Item 2</div>
+      <!-- <div class="box">Item 3</div> -->
+      <!-- <div class="box">Item 4</div>
+      <div class="box">Item 5</div>
+      <div class="box">Item 6</div>
+      <div class="box">Item 7</div>
+      <div class="box">Item 8</div>
+      <div class="box">Item 9</div> -->
+    </div>
+
+    <!-- <fieldset>
       <legend>Gender</legend>
     </fieldset>
 
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <textarea name="" id="" cols="30" rows="10"></textarea> -->
 
     <!-- <div class="wrapper">
       <div>
