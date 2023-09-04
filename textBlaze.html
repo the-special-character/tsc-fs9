@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function changeCase(e) {
+        const { value } = e;
+        if (value) {
+          let str = "";
+          let i = 0;
+          while (i < value.length) {
+            if(i%2 === 0) {
+                str+=value[i].toUpperCase();
+            } else {
+                str+=value[i];
+            }
+            i++;
+          }
+          console.log(str);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" onkeyup="changeCase(this)" />
+  </body>
+</html>
