@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RC dev</title>
+  <link rel="stylesheet" href="file.css" />
+  <script src="https://kit.fontawesome.com/0e9462225b.js" crossorigin="anonymous"></script>
+  <meta name="description" content="Hello, My name Rahul Chovatiya, I'm Full-Stack developer and Persnol guide" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <meta property="og:title" content="RC.developer" />
+  <meta property="og:url" content="https://www.linkedin.com/in/rahul-chovatiya-202021258/" />
+  <meta property="profile:firs_tname" content="Rahul" />
+  <meta property="profile:last_name" content="Chovatiya" />
+  <meta property="profile:username" content="rahul-chovatiya-202021258" />
+  <meta property="og:image" content="https://ik.imagekit.io/t3q3g3xfh/Rahul.jpg?updatedAt=1690014027429" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+
+  <meta name="twitter:title" content="RC.developer" />
+  <meta name="twitter:description"
+    content="Hello, My name Rahul Chovatiya, I'm Full-Stack developer and Persnol guide" />
+  <meta name="twitter:site" content="@RahulChovatiya0" />
+  <meta name="twitter:image" content="https://ik.imagekit.io/t3q3g3xfh/Rahul.jpg?updatedAt=1690014027429" />
+  <meta name="twitter:creator" content="@RahulChovatiya0" />
+
+  <link rel="icon" href="https://ik.imagekit.io/t3q3g3xfh/fox.png?updatedAt=1690015113758" type="image/svg+xml" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+      <nav>
+        <h1 class="logo"><span class="R">R</span>ahul.dev</h1>
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fas fa-solid fa-arrow-right" style="color: #000000" onclick="closemenu(sidemenu)"></i>
+        </ul>
+
+        <i class="fas fa-bars" style="color: #000000" onclick="openmenu(sidemenu)"></i>
+      </nav>
+
+      <div class="text">
+        <div class="slide anim">
+          <span class="one">Hello</span>
+          <span class="two">I'm</span>
+        </div>
+        <h1 class="anim"> <span></span>Rahul <span class="three">Chovatiya</span></span></h1>
+        <h3 class="anim">Website <span class="three" id="simple2">Designer.</span></h3>
+
+        <p class="anim">Lorem ipsum dolor sit amet.</p>
+        <a href="#contact" class="btn anim"><span>Contact Me</span></a>
+
+      </div>
+    </div>
+  </header>
+
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-1" data-aos="flip-right" data-aos-delay="150" data-aos-once="false" data-aos-offset="200">
+          <img class="top-main" src="https://ik.imagekit.io/t3q3g3xfh/Rahul%201.webp?updatedAt=1693848825406" />
+        </div>
+        <div class="about-2" data-aos="fade-right" data-aos-delay="200" data-aos-once="false" data-aos-offset="200">
+          <div>
+            <h1 class="about-title">About Me</h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo
+              repellendus odio officiis recusandae placeat praesentium ab sit
+              quia impedit eveniet, corrupti alias dolorum labore soluta
+              voluptate iure, ad expedita consectetur!
+            </p>
+          </div>
+
+          <div class="tab-title">
+            <p class="tab-links active-link" onclick="opentab('skills')">
+              Skills
+            </p>
+            <p class="tab-links" onclick="opentab('experience')">
+              Experience
+            </p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li>
+                <span>Web-Designer</span><br />
+                Lorem ipsum dolor sit amet.
+              </li>
+              <li>
+                <span>Full-Stack Developer</span><br />
+                Lorem ipsum dolor sit amet.
+              </li>
+              <li>
+                <span>Digital Marketing</span><br />
+                Lorem ipsum dolor sit amet.
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li>
+                <span>The Special Character LTD.PVT</span><br />
+                Lorem ipsum dolor sit amet.
+              </li>
+              <li>
+                <span>Way to Web Development</span><br />
+                Lorem ipsum dolor sit amet.
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li>
+                <span>2023</span><br />
+                Internship at The Special Character.
+              </li>
+              <li>
+                <span>2022</span><br />
+                Compelted Internship at Way to Web Development.
+              </li>
+              <li>
+                <span>2020-2024</span><br />
+                Completed My engineering degree.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="services">
+    <div class="container">
+      <h1 class="about-title" data-aos="fade-down" data-aos-delay="150" data-aos-once="false">My Services</h1>
+      <div class="services-list" data-aos="fade-right" data-aos-delay="200" data-aos-once="false">
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Web Design</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            impedit rerum repudiandae nostrum voluptatum quas, minus expedita
+            aliquid molestias? Asperiores suscipit fugiat at doloribus
+            delectus quo molestias sed saepe quia?
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-android"></i>
+          <h2>Full-Stack Developer</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            impedit rerum repudiandae nostrum voluptatum quas, minus expedita
+            aliquid molestias? Asperiores suscipit fugiat at doloribus
+            delectus quo molestias sed saepe quia?
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-app-store-ios"></i>
+          <h2>Digital Marketing</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            impedit rerum repudiandae nostrum voluptatum quas, minus expedita
+            aliquid molestias? Asperiores suscipit fugiat at doloribus
+            delectus quo molestias sed saepe quia?
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-mobile"></i>
+          <h2>App Development</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            impedit rerum repudiandae nostrum voluptatum quas, minus expedita
+            aliquid molestias? Asperiores suscipit fugiat at doloribus
+            delectus quo molestias sed saepe quia?
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-crop-simple"></i>
+          <h2>UI-UX Design</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            impedit rerum repudiandae nostrum voluptatum quas, minus expedita
+            aliquid molestias? Asperiores suscipit fugiat at doloribus
+            delectus quo molestias sed saepe quia?
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-bootstrap"></i>
+          <h2>Bootstrap</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione
+            impedit rerum repudiandae nostrum voluptatum quas, minus expedita
+            aliquid molestias? Asperiores suscipit fugiat at doloribus
+            delectus quo molestias sed saepe quia?
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contactleft">
+          <h1 class="about-title" data-aos="fade-down" data-aos-once="false" data-aos-duration="500">Contect Me</h1>
+          <div data-aos="fade-down" data-aos-delay="150" data-aos-once="false">
+            <p>
+              <i class="fa-solid fa-paper-plane"></i>rahulchovatiya05@gmail.com
+            </p>
+            <p><i class="fa-solid fa-phone"></i>75749 30153</p>
+          </div>
+          <div class="social-icon" data-aos="fade-down" data-aos-delay="250" data-aos-once="false">
+            <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com/RahulChovatiya0" target="_blank"><i
+                class="fa-brands fa-twitter-square"></i></a>
+            <a href="https://instagram.com/rahul___chovatiya?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==" target="_blank"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/rahul-chovatiya-202021258/" target="_blank"><i
+                class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <div data-aos="fade-down" data-aos-delay="300" data-aos-once="false">
+            <a href="/work/Portfolio/CV/Rahul Chovatiya.pdf" download class="btn"><span>Download CV</span></a>
+          </div>
+        </div>
+        <div class="contactright">
+          <form name="submit-to-google-sheet" data-aos="fade-down" data-aos-delay="250" data-aos-once="false">
+            <input type="text" name="Name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <div data-aos="fade-down" data-aos-delay="200" data-aos-once="false">
+              <button type="submit" class="btn bg-black">
+                <span>Submit</span>
+              </button>
+            </div>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright &#169; Made by Rahul Chovatiya</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>

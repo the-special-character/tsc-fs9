@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task2</title>
+    <link
+      rel="shortcut icon"
+      href="/work/Task/Images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <!-- <link rel="stylesheet" href="style2.css" /> -->
+    <style>
+        body{
+            background-color: #141519;
+            font-family: "poppins", sans-serif;
+            margin: 0;
+            display: flex;
+        }
+        
+        .mainbox{
+            position: absolute;
+            height: 370px;
+            width: 350px;
+            background-color: #1f2630;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 25px;
+        }
+        .starbox{
+            background-color: #262f38;
+            position: relative;
+            height: 50px;
+            width: 50px;
+            margin: 25px;
+            border-radius: 30px;
+        }
+        img{
+          width: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      
+        h1{
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin: 25px;
+        }
+        p{
+            color: #6c737d;
+            font-size: 14px;
+            margin: 25px;
+        }
+        .btns{
+            position: relative;
+            display: flex;
+            gap: 1.5rem;
+            margin: 25px;
+            margin-top: 3px;
+        }
+        .btns button{
+          background-color: #262f38;
+          width: 3em;
+          aspect-ratio: 1/1;
+          text-align: center;
+          line-height: 3em;
+          border-radius: 100%;
+          border: none;
+          color: azure;
+          font-weight: 550;
+          font-size: 14px;
+        }
+        .btns button:hover{
+            background-color: #fc7613;
+            color: white;
+        }
+        input[type="button"]{
+            background-color: #fc7613;
+            height: 45px;
+            width: 300px;
+            margin-left: 27px;
+            margin-top: 3px;
+            border: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1.8px;
+            color: white;
+            text-align: center;
+            font-weight: 400;
+        }
+        input[type="button"]:hover{
+            background-color: white;
+            color: #fc7613;
+            transition: 0.4s;
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mainbox">
+        <div class="starbox">
+          <img src="/work/Task/Images/icon-star.svg" />
+        </div>
+        <div class="text">
+          <h1>How did we do?</h1>
+          <p>
+            Please let us know how we did with your support request.All feedback
+            appreciated to help us improve our offering!
+          </p>
+        </div>
+        <div class="btns">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+        </div>
+        <input type="button" value="Submit">
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-7</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Rubik", sans-serif;
+        color: white;
+        background-color: #0d1323;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      }
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        background-color: #0d1323;
+        min-height: 100vh;
+      }
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .wrapper > .box {
+        min-height: 300px;
+        display: grid;
+        grid-template-rows: 1fr 3fr;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+
+      .wrapper > .box:not(:first-child) > div:nth-child(1) {
+        background-color: hsl(15, 100%, 70%);
+        grid-row: 1 /-1;
+        grid-column: 1 / -1;
+      }
+
+      .wrapper > .box:not(:first-child) > div:nth-child(2) {
+        background-color: hsl(235, 46%, 20%);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        grid-row: 2 / -1;
+        grid-column: 1/-1;
+        z-index: 10;
+      }
+
+      .wrapper > .box:nth-child(3) > div:nth-child(1) {
+        background-color: hsl(195, 74%, 62%);
+      }
+
+      .wrapper > .box:nth-child(4) > div:nth-child(1) {
+        background-color: hsl(348, 100%, 68%);
+      }
+
+      .wrapper > .box:nth-child(5) > div:nth-child(1) {
+        background-color: hsl(145, 58%, 55%);
+      }
+
+      .wrapper > .box:nth-child(6) > div:nth-child(1) {
+        background-color: hsl(264, 64%, 52%);
+      }
+
+      .wrapper > .box:nth-child(7) > div:nth-child(1) {
+        background-color: hsl(43, 84%, 65%);
+      }
+
+      .wrapper > .box:first-child {
+        grid-template-rows: 2fr 1fr;
+      }
+
+      .wrapper > .box:first-child > div:nth-child(1) {
+        grid-row: 1 /2;
+        grid-column: 1 / -1;
+        background-color: hsl(246, 80%, 60%);
+        z-index: 10;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+
+      .wrapper > .box:first-child > div:nth-child(2) {
+        grid-row: 1 /-1;
+        grid-column: 1 / -1;
+        background-color: hsl(235, 46%, 20%);
+      }
+
+      .wrapper > .box > div > img {
+        height: 125px;
+        margin: 30px 30px;
+      }
+
+      .wrapper > .box > div > .text {
+        margin-left: 40px;
+      }
+
+      .wrapper > .box > div > .text > h1 {
+        font-weight: 80;
+        letter-spacing: 3px;
+        font-size: 2.3rem;
+      }
+
+      .wrapper > .box > .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .wrapper > .box > .time p {
+        margin: 30px 40px;
+        line-height: 10px;
+        font-size: 1.3rem;
+        font-weight: 200;
+      }
+
+      .wrapper .box .work-content {
+        display: grid;
+      }
+
+      .wrapper .box .work-content h2 {
+        margin: 40px 30px;
+        font-weight: 400;
+      }
+
+      .wrapper .box .work-content h3 {
+        font-size: 4rem;
+        line-height: 10%;
+        margin: 10px 30px;
+        font-weight: 200;
+      }
+
+      .wrapper .box .work-content p {
+        line-height: 10%;
+        margin: 10px 30px;
+        font-weight: 200;
+      }
+
+      @media screen and (min-width: 1024px) {
+        .wrapper {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .wrapper > .box {
+          aspect-ratio: 1/1;
+        }
+
+        .wrapper > .box:nth-child(1) {
+          grid-row: span 2;
+          aspect-ratio: initial;
+        }
+
+        .wrapper .box .image {
+          height: 125px;
+          margin: 25px 30px;
+        }
+
+        .wrapper .box .image img {
+          margin-left: 160px;
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .wrapper > .box > .time {
+          display: flex;
+        }
+
+        .wrapper > .box > .time p {
+          margin: 30px 40px;
+          line-height: 10px;
+          font-size: 1.3rem;
+          font-weight: 200;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="box">
+          <div>
+            <img
+              src="/work/Task/Images/Task7/image-jeremy.png
+            "
+              alt="jeremy"
+            />
+            <div class="text">
+              <p>Report for</p>
+              <h1>Jeremy <br />Robson</h1>
+            </div>
+          </div>
+          <div class="time">
+            <p>Daily</p>
+            <p>Weekly</p>
+            <p>Monthly</p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <div class="image">
+              <img
+                src="/work/Task/Images/Task7/icon-work.svg"
+                alt=""
+                height="125px"
+              />
+            </div>
+          </div>
+          <div class="work-content">
+            <h2>Work</h2>
+            <h3>32Hrs</h3>
+            <p>Last Week - 36hrs</p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <div class="image">
+              <img
+                src="/work/Task/Images/Task7/icon-play.svg"
+                alt=""
+                height="125px"
+              />
+            </div>
+          </div>
+          <div class="work-content">
+            <h2>Play</h2>
+            <h3>10Hrs</h3>
+            <p>Last Week - 8hrs</p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <div class="image">
+              <img
+                src="/work/Task/Images/Task7/icon-study.svg"
+                alt=""
+                height="125px"
+              />
+            </div>
+          </div>
+          <div class="work-content">
+            <h2>Study</h2>
+            <h3>4Hrs</h3>
+            <p>Last Week - 7hrs</p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <div class="image">
+              <img
+                src="/work/Task/Images/Task7/icon-exercise.svg"
+                alt=""
+                height="125px"
+              />
+            </div>
+          </div>
+          <div class="work-content">
+            <h2>Exercise</h2>
+            <h3>4Hrs</h3>
+            <p>Last Week - 7hrs</p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <div class="image">
+              <img
+                src="/work/Task/Images/Task7/icon-social.svg"
+                alt=""
+                height="125px"
+              />
+            </div>
+          </div>
+          <div class="work-content">
+            <h2>Social</h2>
+            <h3>5Hrs</h3>
+            <p>Last Week - 10hrs</p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <div class="image">
+              <img
+                src="/work/Task/Images/Task7/icon-self-care.svg"
+                alt=""
+                height="125px"
+              />
+            </div>
+          </div>
+          <div class="work-content">
+            <h2>Self Care</h2>
+            <h3>2Hrs</h3>
+            <p>Last Week - 2hrs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+  </body>
+</html>

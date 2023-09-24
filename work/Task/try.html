@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&family=Poppins:wght@600;700&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        color: black;
+        background-color: white;
+        min-height: 200vh;
+      }
+      header {
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 40px 30px;
+        z-index: 100;
+      }
+      header.sticky {
+        padding: 5px 30px;
+        background-color: black;
+      }
+
+      header ul {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      header ul li {
+        position: relative;
+        list-style: none;
+      }
+      header ul li a {
+        position: relative;
+        text-decoration: none;
+        margin: 0 15px;
+        color: black;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: 1s;
+      }
+
+      header.sticky ul li a {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">Logo</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contacat</a></li>
+      </ul>
+    </header>
+    <section class="banner"></section>
+
+    <script type="text/javascript">
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+      });
+    </script>
+    <script>
+      new TypeIt("#asyncExec", {
+        waitUntilVisible: true,
+      })
+        .type("Hold up!")
+        .exec(async () => {
+          await new Promise((resolve, reject) => {
+            setTimeout(() => {
+              return resolve();
+            }, 2000);
+          });
+        })
+        .type(" OK, now go.")
+        .go();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: hsl(234, 29%, 20%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: "Roboto", sans-serif;
+      }
+      .wrapper {
+        display: flex;
+        width: 800px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 20px;
+      }
+      .main-content {
+        width: 50%;
+      }
+      .image {
+        width: 50%;
+      }
+      .image img {
+        width: 100%;
+      }
+      ul {
+        list-style-image: url(./assets/images/icon-list.svg);
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+      }
+      label {
+        margin-bottom: 10px;
+        color: black;
+        font-size: small;
+      }
+      input {
+        padding: 10px 20px;
+        font-family: inherit;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid hsl(231, 7%, 60%);
+      }
+      button {
+        font-family: inherit;
+        margin-top: 20px;
+        padding: 15px 20px;
+        border: none;
+        outline: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: hsl(235, 18%, 26%);
+      }
+      button:hover {
+        background-color: hsl(4, 100%, 67%);
+        transition: all 1s;
+      }
+      h1 {
+        font-size: 45px;
+        color: hsl(234, 29%, 20%);
+      }
+      @media (max-width: 768px) {
+        .wrapper {
+          flex-direction: column-reverse;
+          width: 95%;
+          padding: 0;
+        }
+        body {
+          padding: 0;
+          margin: 0;
+        }
+        .wrapper h1 {
+          font-size: 30px;
+        }
+        .main-content {
+          width: 100%;
+          padding: 20px;
+        }
+        .image {
+          width: 100%;
+        }
+        .image img {
+          content: url("/Assent/Big.jpg");
+        }
+        form {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="main-content">
+        <form action="">
+          <h1>Stay updated!</h1>
+
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul>
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+          <label for="email"> Email address</label>
+          <input type="email" id="email" placeholder="  email@company.com" />
+          <button type="submit">Subcribe to Monthly Newsletter</button>
+        </form>
+      </div>
+      <div class="image">
+        <img src="/Assent/Big.jpg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

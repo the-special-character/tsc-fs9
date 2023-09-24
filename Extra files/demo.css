@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@500&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #232323;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 30px;
+    text-shadow: 2px 2px 10px black;
+}
+
+.box {
+    background-color: aqua;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 15px;
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-last-of-type(even) {
+    transform: translateX(-400%);
+}
+
+.box.show {
+    transform: translateX(0);
+}

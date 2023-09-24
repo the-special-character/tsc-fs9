@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px 10%;
+    overflow: hidden;
+}
+
+.content {
+    margin-top: 10%;
+    max-width: 600px;
+}
+
+.content h1 {
+    font-size: 70px;
+    color: aqua;
+}
+
+.content p {
+    margin: 10px 0 30px;
+    animation-delay: 0.5s;
+}
+
+.content a {
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    animation-delay: 1s;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    background-color: coral;
+    border-radius: 10px;
+
+}
+
+.anim {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+}
+
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

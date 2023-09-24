@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "cSpell.enableFiletypes": ["!html"],
+  "cSpell.words": [
+    "opentab",
+    "sidemenu",
+    "tabcontent",
+    "tabcontents",
+    "tablink",
+    "tablinks",
+    "tabname"
+  ]
+}

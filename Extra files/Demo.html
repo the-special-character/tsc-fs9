@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Style your header as needed */
+      body {
+        height: 200vh;
+      }
+      #myHeader {
+        background-color: #333;
+        color: #fff;
+        height: 50px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: top 0.3s;
+      }
+
+      /* Apply a class to hide the header */
+      .header-hidden {
+        top: -50px; /* Negative height to hide the header */
+      }
+    </style>
+  </head>
+  <body>
+    <header id="myHeader">
+      <!-- Your header content goes here -->
+    </header>
+
+    <div id="content">
+      <!-- Your webpage content goes here -->
+    </div>
+
+    <script>
+      let prevScrollPos = window.pageYOffset;
+
+      window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+
+        if (prevScrollPos > currentScrollPos) {
+          document.getElementById("myHeader").classList.remove("header-hidden");
+        } else {
+          document.getElementById("myHeader").classList.add("header-hidden");
+        }
+
+        prevScrollPos = currentScrollPos;
+      };
+    </script>
+  </body>
+</html>
