@@ -1,39 +1,38 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
-const devMode = process.env.NODE_ENV !== "production";
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.jsx',
   output: {
-    path: path.resolve(__dirname, "output"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'output'),
+    filename: 'bundle.js',
   },
-  mode: devMode ? "development" : "production",
+  mode: devMode ? 'development' : 'production',
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-          ,
-          "css-loader",
-          "postcss-loader",
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
         ],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      filename: "index.html",
+      template: './public/index.html',
+      filename: 'index.html',
     }),
   ].concat(devMode ? [] : [new MiniCssExtractPlugin()]),
   devServer: {

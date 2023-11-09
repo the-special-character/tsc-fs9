@@ -1,12 +1,8 @@
-const sum = (a, b) => {
-    return a + b;
-}
+const sum = (a, b) => a + b;
 
-const sub = (a, b) => {
-    return a - b;
-}
+const sub = (a, b) => a - b;
 
 module.exports = {
-    sum,
-    sub
+  sum,
+  sub,
 };
