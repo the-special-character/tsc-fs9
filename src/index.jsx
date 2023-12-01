@@ -9,7 +9,7 @@ const root = createRoot(rootEle);
 
 root.render(
   <>
-    <App title="hello" desc="abc" />
+    <App title="hello" desc="" gender="male" />
     <App title="world" desc="pqr" />
   </>,
 );
