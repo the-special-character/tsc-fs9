@@ -1,38 +1,36 @@
-// import React from 'react';
-
 import React, { Component } from 'react';
 
-// function Child2() {
-//   return <div>child2</div>;
-// }
-
-// export default Child2;
-
-// let count = 0;
-
-class Child2 extends Component {
+export default class Child2 extends Component {
   state = {
     count: 0,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
+
   render() {
-    console.log('child2 render');
+    const { count } = this.state;
+
     return (
       <div>
         <button
           type="button"
           onClick={() => {
-            // this.state.count += 1;
-            this.setState({ count: 5 });
+            // this.setState({ count: 5 });
+            this.setState(({ count }) => ({ count: count + 1 }));
           }}
         >
           +
         </button>
-        <p>{this.state.count}</p>
+        <p>{count}</p>
         <button
           type="button"
           onClick={() => {
-            this.setState({ count: -8 });
+            this.setState(({ count }) => ({ count: count - 1 }));
           }}
         >
           -
@@ -41,5 +39,3 @@ class Child2 extends Component {
     );
   }
 }
-
-export default Child2;

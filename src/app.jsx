@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Child1 from './child1';
 import Child2 from './child2';
+import Child3 from './child3';
 
 function App({ title, desc, age, gender }) {
   console.log('app render');
@@ -16,6 +17,7 @@ function App({ title, desc, age, gender }) {
       <button type="button">Submit</button>
       <Child1 />
       <Child2 />
+      <Child3 />
     </>
   );
 }
