@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Child2 from './child2';
+import Child1 from './child1';
+import Child3 from './child3';
 
 // Child2.getDerivedStateFromProps = (props, state) => ({
 //   greet: `hello ${props.name}`,
@@ -12,10 +14,12 @@ class App extends Component {
   };
 
   render() {
+    console.log('render app');
     const { name } = this.state;
     return (
       <>
-        <Child2 name={name} />
+        <p>app component name = {name}</p>
+
         <button
           type="button"
           onClick={() => {
@@ -25,7 +29,9 @@ class App extends Component {
           Change name
         </button>
 
-        <p>app component name = {name}</p>
+        {name === 'yagnesh' && <Child1 name={name} />}
+        <Child2 />
+        <Child3 />
       </>
     );
   }

@@ -1,44 +1,21 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+// import shallowCompare from 'react-addons-shallow-compare';
 
-export default class Child3 extends Component {
-  state = {
-    user: {
-      name: 'yagnesh',
-      gender: 'male',
-      age: 36,
-    },
-    displayAge: true,
-  };
+class Child3 extends PureComponent {
+  state = {};
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return shallowCompare(this, nextProps, nextState);
+  // }
 
   render() {
-    const { user, displayAge } = this.state;
-
+    console.log('child 3 component');
     return (
       <div>
-        <p>{user.name}</p>
-        <p>{user.gender}</p>
-        {displayAge && <p>{user.age}</p>}
-        {!displayAge && (
-          <button
-            type="button"
-            onClick={() => {
-              this.setState({ displayAge: true });
-            }}
-          >
-            Show Age
-          </button>
-        )}
-        {displayAge && (
-          <button
-            type="button"
-            onClick={() => {
-              this.setState({ displayAge: false });
-            }}
-          >
-            Hide Age
-          </button>
-        )}
+        <h1>Child 3 component</h1>
       </div>
     );
   }
 }
+
+export default Child3;
