@@ -13,11 +13,22 @@ class App extends Component {
     name: 'yagnesh',
   };
 
+  static getDerivedStateFromError(error) {
+    return {
+      error,
+    };
+  }
+
+  componentDidCatch(error, info) {
+    console.log(info.componentStack);
+  }
+
   render() {
     console.log('render app');
-    const { name } = this.state;
+    const { name, error } = this.state;
     return (
       <>
+        {error && <h1>{error.message}</h1>}
         <p>app component name = {name}</p>
 
         <button
