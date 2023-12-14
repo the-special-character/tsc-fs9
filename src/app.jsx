@@ -1,81 +1,98 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Child2 from './child2';
-import Child1 from './child1';
-import Child3 from './child3';
 
-// Child2.getDerivedStateFromProps = (props, state) => ({
-//   greet: `hello ${props.name}`,
-// });
-
-class App extends Component {
+export default class App extends Component {
   state = {
-    name: 'yagnesh',
+    todoText: '',
+    todoList: [],
   };
 
-  static getDerivedStateFromError(error) {
-    return {
-      error,
-    };
-  }
+  changeText = event => {
+    console.log(event.target.value);
+    this.setState({ todoText: event.target.value });
+  };
 
-  componentDidCatch(error, info) {
-    console.log(info.componentStack);
-  }
+  addTodo = event => {
+    event.preventDefault();
+    this.setState(({ todoText, todoList }) => ({
+      todoList: [...todoList, { text: todoText, isDone: false, id: new Date().valueOf() }],
+      todoText: '',
+    }));
+  };
+
+  toggleComplete = item => {
+    this.setState(({ todoList }) => {
+      const index = todoList.findIndex(x => x.id === item.id);
+      return {
+        todoList: [
+          ...todoList.slice(0, index),
+          { ...todoList[index], isDone: !todoList[index].isDone },
+          ...todoList.slice(index + 1),
+        ],
+      };
+    });
+  };
 
   render() {
-    console.log('render app');
-    const { name, error } = this.state;
+    const { todoText, todoList } = this.state;
     return (
-      <>
-        {error && <h1>{error.message}</h1>}
-        <p>app component name = {name}</p>
-
-        <button
-          type="button"
-          onClick={() => {
-            this.setState({ name: 'rohit' });
-          }}
-        >
-          Change name
-        </button>
-
-        {name === 'yagnesh' && <Child1 name={name} />}
-        <Child2 />
-        <Child3 />
-      </>
+      <main className="flex flex-col gap-4 min-h-screen">
+        <h1 className="text-4xl font-bold text-center my-4">Todo App</h1>
+        <form className="flex justify-center mx-2" onSubmit={this.addTodo}>
+          <div>
+            <label htmlFor="todoText" className="sr-only">
+              Todo Text
+            </label>
+            <input
+              type="text"
+              id="todoText"
+              className="rounded-l-md"
+              value={todoText}
+              onChange={this.changeText}
+            />
+          </div>
+          <button
+            type="submit"
+            className="rounded-r-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            <span className="line-clamp-1">Add Todo</span>
+          </button>
+        </form>
+        <section id="todoList" className="flex flex-col gap-4 mx-2 flex-1">
+          {todoList.map(x => (
+            <section id="listItem1" className="flex items-center">
+              <div>
+                <label htmlFor="toggleComplete" className="sr-only">
+                  Toggle Complete
+                </label>
+                <input
+                  type="checkbox"
+                  name="toggleComplete"
+                  id="toggleComplete"
+                  checked={x.isDone}
+                  onChange={() => this.toggleComplete(x)}
+                />
+              </div>
+              <p className={`flex-1 px-4 line-clamp-2 ${x.isDone ? 'line-through' : ''}`}>
+                {x.text}
+              </p>
+              <button type="button" className="btn">
+                Delete
+              </button>
+            </section>
+          ))}
+        </section>
+        <section id="filterTodo" className="flex">
+          <button type="button" className="btn rounded-none flex-1">
+            All
+          </button>
+          <button type="button" className="btn rounded-none flex-1">
+            Pending
+          </button>
+          <button type="button" className="btn rounded-none flex-1">
+            Completed
+          </button>
+        </section>
+      </main>
     );
   }
 }
-
-// function App({ title, desc, age, gender }) {
-//   console.log('app render');
-//   return (
-//     <>
-//       <h1 className="bg-yellow-400 text-blue-600">{`hello ${title}`}</h1>
-//       <h2>{desc}</h2>
-//       {age && <h3>{age}</h3>}
-//       {gender && <h4>{gender}</h4>}
-//       <input type="text" />
-//       <input type="checkbox" />
-//       <button type="button">Submit</button>
-//       <Child1 />
-//       <Child2 name="yagnesh" />
-//       <Child3 />
-//     </>
-//   );
-// }
-
-App.propTypes = {
-  title: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
-  age: PropTypes.number,
-  gender: PropTypes.oneOf(['male', 'female']),
-};
-
-App.defaultProps = {
-  age: undefined,
-  gender: 'male',
-};
-
-export default App;
