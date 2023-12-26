@@ -22,5 +22,6 @@ module.exports = {
   },
   rules: {
     'react/state-in-constructor': 0,
+    'jsx-a11y/label-has-associated-control': 0,
   },
 };

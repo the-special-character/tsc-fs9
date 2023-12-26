@@ -1,9 +1,9 @@
 import React, { forwardRef, memo } from 'react';
+import PropTypes from 'prop-types';
 
 function TodoForm({ addTodo }, ref) {
-  console.log('Todo Form');
   return (
-    <form className="flex justify-center mx-2" onSubmit={addTodo}>
+    <form className="flex justify-center mx-2" onSubmit={addTodo} noValidate>
       <div>
         <label htmlFor="todoText" className="sr-only">
           Todo Text
@@ -19,5 +19,9 @@ function TodoForm({ addTodo }, ref) {
     </form>
   );
 }
+
+TodoForm.propTypes = {
+  addTodo: PropTypes.func.isRequired,
+};
 
 export default memo(forwardRef(TodoForm));

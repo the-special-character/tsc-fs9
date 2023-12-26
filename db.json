@@ -1,0 +1,29 @@
+{
+  "todo-list": [
+    {
+      "isDone": true,
+      "text": "asdfa",
+      "id": 1
+    },
+    {
+      "isDone": true,
+      "text": "asdf",
+      "id": 2
+    },
+    {
+      "isDone": true,
+      "text": "asdfadsf",
+      "id": 4
+    },
+    {
+      "isDone": false,
+      "text": "asdfas",
+      "id": 5
+    },
+    {
+      "isDone": false,
+      "text": "asdfasdf",
+      "id": 6
+    }
+  ]
+}
