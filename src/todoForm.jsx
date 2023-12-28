@@ -1,7 +1,7 @@
 import React, { forwardRef, memo } from 'react';
 import PropTypes from 'prop-types';
 
-function TodoForm({ addTodo }, ref) {
+function TodoForm({ addTodo, state }, ref) {
   return (
     <form className="flex justify-center mx-2" onSubmit={addTodo} noValidate>
       <div>
@@ -12,7 +12,8 @@ function TodoForm({ addTodo }, ref) {
       </div>
       <button
         type="submit"
-        className="rounded-r-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        disabled={state?.stattus === 'LOADING'}
+        className="rounded-r-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-zinc-400 disabled:cursor-wait"
       >
         <span className="line-clamp-1">Add Todo</span>
       </button>
@@ -22,6 +23,11 @@ function TodoForm({ addTodo }, ref) {
 
 TodoForm.propTypes = {
   addTodo: PropTypes.func.isRequired,
+  state: PropTypes.shape({
+    task: PropTypes.string.isRequired,
+    stattus: PropTypes.oneOf(['LOADING', 'ERROR']).isRequired,
+    message: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default memo(forwardRef(TodoForm));

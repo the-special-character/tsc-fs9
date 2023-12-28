@@ -14,7 +14,7 @@ class TodoList extends PureComponent {
   // }
 
   render() {
-    const { todoList, toggleComplete, deleteTodo } = this.props;
+    const { todoList, toggleComplete, deleteTodo, state } = this.props;
     const { error } = this.state;
     return (
       <section id="todoList" className="flex flex-col gap-4 mx-2 flex-1">
@@ -28,6 +28,7 @@ class TodoList extends PureComponent {
               x={x}
               toggleComplete={toggleComplete}
               deleteTodo={deleteTodo}
+              state={state.find(y => y.id === x.id)}
             />
           ))
         )}
@@ -46,6 +47,13 @@ TodoList.propTypes = {
   ).isRequired,
   toggleComplete: PropTypes.func.isRequired,
   deleteTodo: PropTypes.func.isRequired,
+  state: PropTypes.arrayOf(
+    PropTypes.shape({
+      task: PropTypes.string.isRequired,
+      stattus: PropTypes.oneOf(['LOADING', 'ERROR']).isRequired,
+      message: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default memo(TodoList);
