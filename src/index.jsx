@@ -1,45 +1,31 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import { createRoot } from 'react-dom/client';
-import App from './app';
 import './style.css';
-import { TodoProvider } from './context/todoContext';
+import Products from './pages/products';
+import Cart from './pages/cart';
+import configureStore from './configureStore';
+
+const store = configureStore();
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Products />,
+  },
+  {
+    path: '/cart',
+    element: <Cart />,
+  },
+]);
 
 const rootEle = document.getElementById('root');
 
 const root = createRoot(rootEle);
 
-// function Test() {
-//   const [counter, setCounter] = useState(0);
-//   const [greet, setGreet] = useState('hello');
-
-//   const inc = useCallback(() => {
-//     setCounter(val => val + 1);
-//   }, []);
-
-//   const dec = useCallback(() => {
-//     setCounter(val => val - 1);
-//   }, []);
-
-//   const data = useMemo(
-//     () => ({
-//       greet: `${greet} world`,
-//     }),
-//     [greet],
-//   );
-
-//   return (
-//     <div>
-//       {counter}
-//       <button type="button" onClick={() => setGreet('bonjour')}>
-//         Change Greet Message
-//       </button>
-//       <Child inc={inc} dec={dec} data={data} />
-//     </div>
-//   );
-// }
-
 root.render(
-  <TodoProvider>
-    <App />
-  </TodoProvider>,
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>,
 );
