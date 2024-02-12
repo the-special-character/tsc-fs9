@@ -4,12 +4,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-  entry: "./index.js",
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, 'output'),
     filename: 'main.js',
   },
-  mode: "production",
+  mode: "development",
   module: {
     rules: [
       {
@@ -18,9 +18,9 @@ module.exports = {
         use:"babel-loader"
       },
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader",],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       }
     ]
   },
@@ -29,9 +29,9 @@ module.exports = {
     filename: 'index.html'
   }),
   new MiniCssExtractPlugin()],
-  // optimization: {
-  //   minimizer: [
-  //     new CssMinimizerPlugin(),
-  //   ],
-  // },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
 };
