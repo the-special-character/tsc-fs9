@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "eslint": "eslint . --fix",
+    "prettier": "prettier . --write",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,7 @@
   "homepage": "https://github.com/the-special-character/tsc-fs9#readme",
   "devDependencies": {
     "@babel/core": "^7.23.9",
+    "@babel/eslint-parser": "^7.23.10",
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.23.3",
     "autoprefixer": "^10.4.17",
@@ -32,11 +36,22 @@
     "css-loader": "^6.10.0",
     "css-minimizer-webpack-plugin": "^6.0.0",
     "cssnano": "^6.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-html": "^8.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "html-webpack-plugin": "^5.6.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.2",
     "mini-css-extract-plugin": "^2.8.0",
     "postcss": "^8.4.35",
     "postcss-loader": "^8.1.0",
     "postcss-preset-env": "^9.3.0",
+    "prettier": "3.2.5",
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",
     "style-loader": "^3.3.4",
