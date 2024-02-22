@@ -21,7 +21,7 @@ export default class App extends Component {
             e.preventDefault();
 
             this.setState(({ todoText: a, todoList: b }) => ({
-              todoList: [...a, b],
+              todoList: [...b, a],
               todoText: '',
             }));
           }}
@@ -41,7 +41,13 @@ export default class App extends Component {
           <button type="submit">Add Todo</button>
         </form>
 
-        {todoList.map((x) => (
+        {/* {todoList.map((x, i) => {
+          if (i < 5) {
+            return <p>{x}</p>;
+          }
+          return null;
+        })} */}
+        {todoList.slice(0, 5).map((x) => (
           <p>{x}</p>
         ))}
       </div>
