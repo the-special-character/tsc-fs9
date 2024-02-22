@@ -7,36 +7,43 @@ document.body.innerHTML = '<div id="app"></div>';
 
 export default class App extends Component {
   state = {
-    count: 0,
+    todoText: '',
+    todoList: [],
   };
 
   render() {
-    const { count: data } = this.state;
+    const { todoText, todoList } = this.state;
 
     return (
       <div>
-        <button
-          type="button"
-          onClick={() => {
-            this.setState(({ count }) => ({
-              count: count + 1,
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+
+            this.setState(({ todoText: a, todoList: b }) => ({
+              todoList: [...a, b],
+              todoText: '',
             }));
           }}
         >
-          +
-        </button>
-        <p>{data}</p>
-        <button
-          type="button"
-          disabled={data <= 0}
-          onClick={() => {
-            this.setState(({ count }) => ({
-              count: count - 1,
-            }));
-          }}
-        >
-          -
-        </button>
+          <input
+            type="text"
+            name="todo"
+            id="todo"
+            className="border"
+            required
+            value={todoText}
+            onChange={(e) => {
+              console.log(e.target.value);
+              this.setState({ todoText: e.target.value });
+            }}
+          />
+          <button type="submit">Add Todo</button>
+        </form>
+
+        {todoList.map((x) => (
+          <p>{x}</p>
+        ))}
       </div>
     );
   }
