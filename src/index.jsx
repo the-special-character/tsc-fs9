@@ -1,55 +1,74 @@
 /* eslint-disable react/state-in-constructor */
 import './style.css';
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import { createRoot } from 'react-dom/client';
 
 document.body.innerHTML = '<div id="app"></div>';
 
+const visibleItem = 5;
+
 export default class App extends Component {
+  inputRef = createRef();
+
   state = {
-    todoText: '',
     todoList: [],
+    page: 1,
+  };
+
+  addTodo = (e) => {
+    e.preventDefault();
+    this.setState(
+      ({ todoList: a }) => ({
+        todoList: [...a, this.inputRef.current.value],
+      }),
+      () => {
+        this.inputRef.current.value = '';
+      },
+    );
+  };
+
+  setNextPage = () => {
+    this.setState(({ page }) => ({
+      page: page + 1,
+    }));
+  };
+
+  setPrevPage = () => {
+    this.setState(({ page }) => ({
+      page: page - 1,
+    }));
   };
 
   render() {
-    const { todoText, todoList } = this.state;
+    const { todoList, page } = this.state;
 
     return (
       <div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-
-            this.setState(({ todoText: a, todoList: b }) => ({
-              todoList: [...b, a],
-              todoText: '',
-            }));
-          }}
-        >
+        <form onSubmit={this.addTodo}>
           <input
             type="text"
             name="todo"
             id="todo"
             className="border"
             required
-            value={todoText}
-            onChange={(e) => {
-              console.log(e.target.value);
-              this.setState({ todoText: e.target.value });
-            }}
+            ref={this.inputRef}
           />
           <button type="submit">Add Todo</button>
         </form>
 
-        {/* {todoList.map((x, i) => {
-          if (i < 5) {
-            return <p>{x}</p>;
-          }
-          return null;
-        })} */}
-        {todoList.slice(0, 5).map((x) => (
+        {todoList.slice((page - 1) * 5, (page - 1) * 5 + 5).map((x) => (
           <p>{x}</p>
         ))}
+        <button
+          type="button"
+          disabled={Math.ceil(todoList.length / visibleItem) <= page}
+          onClick={this.setNextPage}
+        >
+          Next
+        </button>
+        <button type="button" disabled={page <= 1} onClick={this.setPrevPage}>
+          Previous
+        </button>
       </div>
     );
   }
