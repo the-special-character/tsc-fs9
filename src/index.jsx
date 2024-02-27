@@ -20,12 +20,37 @@ export default class App extends Component {
     const input = this.inputRef.current;
     this.setState(
       ({ todoList: a }) => ({
-        todoList: [...a, { id: new Date().valueOf(), text: input.value }],
+        todoList: [
+          ...a,
+          { id: new Date().valueOf(), text: input.value, isDone: false },
+        ],
       }),
       () => {
         input.value = '';
       },
     );
+  };
+
+  toggleComplete = (x) => {
+    this.setState(({ todoList }) => {
+      const index = todoList.findIndex((y) => y.id === x.id);
+      return {
+        todoList: [
+          ...todoList.slice(0, index),
+          { ...todoList[index], isDone: !x.isDone },
+          ...todoList.slice(index + 1),
+        ],
+      };
+    });
+  };
+
+  deleteTodo = (x) => {
+    this.setState(({ todoList }) => {
+      const index = todoList.findIndex((y) => y.id === x.id);
+      return {
+        todoList: [...todoList.slice(0, index), ...todoList.slice(index + 1)],
+      };
+    });
   };
 
   setNextPage = () => {
@@ -42,8 +67,6 @@ export default class App extends Component {
 
   render() {
     const { todoList, page } = this.state;
-
-    console.log('render');
 
     return (
       <div className="flex flex-col">
@@ -68,10 +91,19 @@ export default class App extends Component {
 
         {todoList.slice((page - 1) * 5, (page - 1) * 5 + 5).map((x) => (
           <div key={x.id} className="mx-10 my-4 flex items-center">
-            <input type="checkbox" name="isDone" id="isDone" />
-            <p className="flex-1 px-6">{x.text}</p>
+            <input
+              type="checkbox"
+              name="isDone"
+              id="isDone"
+              checked={x.isDone}
+              onChange={() => this.toggleComplete(x)}
+            />
+            <p className={`flex-1 px-6 ${x.isDone ? 'line-through' : ''}`}>
+              {x.text}
+            </p>
             <button
               type="button"
+              onClick={() => this.deleteTodo(x)}
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Delete
