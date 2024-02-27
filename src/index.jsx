@@ -21,8 +21,8 @@ export default class App extends Component {
     this.setState(
       ({ todoList: a }) => ({
         todoList: [
-          ...a,
           { id: new Date().valueOf(), text: input.value, isDone: false },
+          ...a,
         ],
       }),
       () => {
