@@ -21,5 +21,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
+  rules: {
+    'react/jsx-props-no-spreading': 0,
+  },
 };
