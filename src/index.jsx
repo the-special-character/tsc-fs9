@@ -3,6 +3,7 @@ import './style.css';
 import React, { Component, createRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import Button from './components/button';
+import TickTack from './TickTack';
 
 document.body.innerHTML = '<div id="app"></div>';
 
@@ -126,7 +127,7 @@ export default class App extends Component {
 const root = createRoot(document.getElementById('app'));
 root.render(
   <div>
-    <App msg="Helllo From props" />
+    <TickTack />
     {/* const app = new App({ msg: "hello from props"}) */}
   </div>,
 );
