@@ -2,10 +2,28 @@
 /* eslint-disable react/state-in-constructor */
 import './style.css';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, PureComponent, memo } from 'react';
 import { createRoot } from 'react-dom/client';
+// import shallowCompare from 'react-addons-shallow-compare'; // ES6
 
 document.body.innerHTML = '<div id="app"></div>';
+
+// Mounting
+// -> constructor
+// -> static getDerivedStateFromProps
+// -> render
+// -> componentDidMount
+
+// updating
+// ->static getDerivedStateFromProps
+// -> shouldComponentUpdate
+// -> render
+// -> getSnapshopBeforeUpdate
+// -> componentDidUpdate
+
+// unmount
+
+// error
 
 // export default class App extends Component {
 //   inputRef = createRef();
@@ -125,9 +143,60 @@ document.body.innerHTML = '<div id="app"></div>';
 // getDerivedStateFromProps
 // render
 
-class Child extends Component {
+class Child1 extends PureComponent {
+  static mousemove = () => {
+    console.log('mouse move');
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.controller = new AbortController();
+    this.signal = this.controller.signal;
+  }
+
+  static getDerivedStateFromProps(props) {
+    return {
+      givenName: props.name,
+    };
+  }
+
+  async componentDidMount() {
+    this.interval = setInterval(() => {
+      console.log('interval');
+    }, 1000);
+
+    document.addEventListener('copy', Child1.mousemove);
+
+    try {
+      await fetch('https://jsonplaceholder.typicode.com/todos/1', {
+        signal: this.signal,
+      });
+      console.log('Api call successful');
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('copy', Child1.mousemove);
+    clearInterval(this.interval);
+    this.controller.abort();
+  }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return shallowCompare(this, nextProps, nextState);
+  // }
+
   render() {
+    console.log('child 1 render');
+
     const { givenName } = this.state;
+
+    if (givenName !== 'yagnesh') {
+      throw new Error('something went wrong...');
+    }
+
     return (
       <div>
         <h1>Hello From Child Component</h1>
@@ -137,9 +206,20 @@ class Child extends Component {
   }
 }
 
-Child.getDerivedStateFromProps = (nextProps) => ({
+Child1.getDerivedStateFromProps = (nextProps) => ({
   givenName: nextProps.name,
 });
+
+Child1.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+function Child2() {
+  console.log('Child 2 render');
+  return <h1>Child 2 Component</h1>;
+}
+
+const MemorizedChild2 = memo(Child2);
 
 class LifeCycle extends Component {
   // assign props to state
@@ -150,33 +230,53 @@ class LifeCycle extends Component {
       name: 'yagnesh',
       displayTitle: props.title,
     };
-    console.log('constructor');
     // analytics
-
-    console.log(document.getElementById('title'));
   }
 
   static getDerivedStateFromProps() {
-    console.log('getDerivedStateFromProps');
-    console.log(document.getElementById('title'));
     return null;
   }
 
   async componentDidMount() {
     document.getElementById('title').style.color = 'red';
-    try {
-      const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-      const json = await res.json();
-      this.setState({ json });
-    } catch (error) {
-      console.log(error);
-    }
+
+    // document.addEventListener('copy', () => {
+    //   console.log('copied');
+    // });
+
+    // document.addEventListener('mousemove', () => {
+    //   console.log('mouse move');
+    // });
+
+    // document.getElementById('banner').addEventListener('copy', () => {
+    //   console.log('copied');
+    // });
+  }
+
+  getSnapshotBeforeUpdate() {
+    return 15;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(snapshot);
+  }
+
+  static getDerivedStateFromError(error) {
+    return {
+      error,
+    };
+  }
+
+  componentDidCatch(error, info) {
+    console.log('info', info.componentStack);
   }
 
   render() {
-    console.log(document.getElementById('title'));
-    console.log('render');
-    const { name, displayTitle, json } = this.state;
+    const { name, displayTitle, json, error } = this.state;
+    if (error) {
+      return <h1>{error.message}</h1>;
+    }
+
     return (
       <div>
         <h1 id="title">{displayTitle}</h1>
@@ -191,7 +291,8 @@ class LifeCycle extends Component {
         <button type="button" onClick={() => this.setState({ name: 'rohit' })}>
           Change Name
         </button>
-        <Child name={name} />
+        <Child1 name={name} />
+        <MemorizedChild2 />
       </div>
     );
   }
@@ -203,8 +304,4 @@ LifeCycle.propTypes = {
 
 // Render your React component instead
 const root = createRoot(document.getElementById('app'));
-root.render(
-  <div>
-    <LifeCycle title="hello world" />
-  </div>,
-);
+root.render(<LifeCycle title="hello world" />);
