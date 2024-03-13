@@ -4,6 +4,7 @@ import './style.css';
 import PropTypes from 'prop-types';
 import React, { Component, PureComponent, memo } from 'react';
 import { createRoot } from 'react-dom/client';
+import Todo from './Todo';
 // import shallowCompare from 'react-addons-shallow-compare'; // ES6
 
 document.body.innerHTML = '<div id="app"></div>';
@@ -304,4 +305,4 @@ LifeCycle.propTypes = {
 
 // Render your React component instead
 const root = createRoot(document.getElementById('app'));
-root.render(<LifeCycle title="hello world" />);
+root.render(<Todo />);
