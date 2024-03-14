@@ -40,6 +40,6 @@ module.exports = {
   devServer: {
     allowedHosts: 'all',
     historyApiFallback: true,
-    port: 3000,
+    port: 8000,
   },
 };
